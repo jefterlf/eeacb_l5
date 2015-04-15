@@ -1,4 +1,4 @@
-<?php
+php artisan make:migration create_nerds_table --table=nerds –create <?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;

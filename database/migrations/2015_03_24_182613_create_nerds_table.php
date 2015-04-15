@@ -31,10 +31,9 @@ class CreateNerdsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('nerds', function(Blueprint $table)
-		{
-			//
-		});
+
+			Schema::drop('nerds');
+
 	}
 
 }

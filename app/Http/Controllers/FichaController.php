@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class rafaelControler extends Controller {
+class FichaController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +14,11 @@ class rafaelControler extends Controller {
 	 */
 	public function index()
 	{
-		//
+
+        $fixas = \App\Models\Ficha::all();
+
+        // load the view and pass the nerds
+        return View('fixa.index')->with('fixas', $fixas);
 	}
 
 	/**

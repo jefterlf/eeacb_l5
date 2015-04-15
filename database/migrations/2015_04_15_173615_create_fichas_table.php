@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFixaTable extends Migration {
+class CreateFichasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,13 @@ class CreateFixaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('fixa', function(Blueprint $table)
+		Schema::create('fichas', function(Blueprint $table)
 		{
             $table->increments('id');
             $table->string('titulo', 255);
             $table->string('descricao', 255);
             $table->string('usuario',255);
+            $table->boolean('tipo');
             $table->timestamps();
 		});
 	}
@@ -29,10 +30,9 @@ class CreateFixaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('fixa', function(Blueprint $table)
-		{
-			//
-		});
+
+            Schema::drop('fichas');
+		
 	}
 
 }

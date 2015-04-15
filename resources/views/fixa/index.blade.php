@@ -1,0 +1,58 @@
+@extends('app')
+@section('content')
+
+<div class="container">
+
+
+
+<h1>Lista de Cadastros</h1>
+
+<!-- will be used to show any messages -->
+@if (Session::has('message'))
+	<div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
+
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Título</td>
+			<td>Descrição</td>
+
+		</tr>
+	</thead>
+	<tbody>
+	@foreach($fixas as $key => $value)
+		<tr>
+			<td>{{ $value->id }}</td>
+			<td>{{ $value->titulo }}</td>
+			<td>{{ $value->descricao }}</td>
+
+			<!-- we will also add show, edit, and delete buttons -->
+			<td>
+
+				<!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
+				<!-- we will add this later since its a little more complicated than the first two buttons -->
+
+
+
+
+	            {!! Form::open(array('url' => 'nerds/' . $value->id, 'class' => 'pull-right')) !!}
+					{!! Form::hidden('_method', 'DELETE') !!}
+					{!! Form::submit('Deletar', array('class' => 'btn btn-warning')) !!}
+				{!! Form::close() !!}
+
+				<!-- show the nerd (uses the show method found at GET /nerds/{id} -->
+				<a class="btn btn-small btn-success" href="{{ URL::to('nerds/' . $value->id) }}">Detalhes</a>
+
+				<!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
+				<a class="btn btn-small btn-info" href="{{ URL::to('nerds/' . $value->id . '/edit') }}">Editar</a>
+
+			</td>
+		</tr>
+	@endforeach
+	</tbody>
+</table>
+
+</div>
+@endsection
