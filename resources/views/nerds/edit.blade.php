@@ -1,25 +1,17 @@
-<!-- app/views/nerds/edit.blade.php -->
+@extends('app')
+@section('content')
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Look! I'm CRUDding</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+<div class="panel-heading">Editar {{ $nerd->name }}</div>
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="{{ URL::to('nerds') }}">Nerd Alert</a>
-	</div>
-	<ul class="nav navbar-nav">
-		<li><a href="{{ URL::to('nerds') }}">View All Nerds</a></li>
-		<li><a href="{{ URL::to('nerds/create') }}">Create a Nerd</a>
-	</ul>
-</nav>
+<!-- if there are creation errors, they will show here -->
 
-<h1>Edit {{ $nerd->name }}</h1>
+	<div class="panel-body">
+
+
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
@@ -45,6 +37,10 @@
 
 {!! Form::close() !!}
 
+
 </div>
-</body>
-</html>
+</div>
+</div>
+</div>
+</div>
+@endsection

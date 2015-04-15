@@ -32,7 +32,7 @@ class CreateFichasTable extends Migration {
 	{
 
             Schema::drop('fichas');
-		
+
 	}
 
 }
