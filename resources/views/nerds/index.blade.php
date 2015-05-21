@@ -15,7 +15,7 @@
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
-			<td>ID</td>
+			<td>jurema</td>
 			<td>Name</td>
 			<td>Email</td>
 			<td>Nivel</td>
