@@ -24,7 +24,7 @@ class FichaController extends Controller {
 	/**
 	 * Show the form for creating a new resource.
 	 *
-	 * @return Response
+	 * @return Response jefter
 	 */
 	public function create()
 	{
