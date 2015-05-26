@@ -14,11 +14,12 @@ class CreateProfessoresTable extends Migration {
 	{
 		Schema::create('professores', function(Blueprint $table)
 		{
-			$table->increments('id');
-            $table->string('nome_professor', 45);
-            $table->date('data_admissao');
+			$table->increments('id_Professor');
+            $table->string('nome', 50);
             $table->date('data_demissao');
-            $table->string('tipo', 15);
+            $table->date('data_admissao');
+            $table->string('tipo', 50);
+
 		});
 	}
 
